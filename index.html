@@ -943,7 +943,7 @@ function loadConfig() {
     return {
       startDate: c.startDate || new Date().toISOString().slice(0, 10),
       duration:  c.duration  || 30,
-      sheetUrl:  c.sheetUrl  || '',
+      sheetUrl:  c.sheetUrl || DEFAULT_SHEET_URL,
     };
   } catch {
     return { startDate: new Date().toISOString().slice(0,10), duration: 30, sheetUrl: '' };
