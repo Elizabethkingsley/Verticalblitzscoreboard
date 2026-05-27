@@ -1,0 +1,15 @@
+# Render Blueprint for the Vertical Blitz dashboard.
+# Optional — Render can deploy from this file directly, or you can configure
+# the same settings in the UI.
+services:
+  - type: web
+    name: vertical-blitz
+    runtime: static
+    buildCommand: ""        # nothing to build — pure static HTML
+    staticPublishPath: "."  # serve from the repo root
+    pullRequestPreviewsEnabled: false
+    headers:
+      # Don't cache the dashboard itself so deploys take effect immediately
+      - path: /index.html
+        name: Cache-Control
+        value: "no-cache, must-revalidate"
